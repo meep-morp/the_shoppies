@@ -1,10 +1,14 @@
-import Reset from "./components/Reset";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Nav from "./components/Nav";
+import "./global.css";
 
 function App() {
 	return (
-		<div className="App">
-			<Reset />
-		</div>
+		<Router>
+			<Nav />
+			<Route exact path="/" component={Home} />
+		</Router>
 	);
 }
 
