@@ -46,10 +46,11 @@ const NavContainer = styled.nav`
         color: black;
         text-decoration: none;
         font-size: 1.5rem;
+        border-bottom: 2px solid transparent;
 
         &:hover {
-
-            transition: ease-in 0.5s;
+            border-bottom: 2px solid #eab75c;
+            transition: ease 0.5s;
         }
     }
 
