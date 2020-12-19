@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../DesignSystem/Button';
 
@@ -8,8 +9,12 @@ const CTA = () => {
             <h2><strong>2020</strong> SHOPPIES BEST IN SHOW</h2>
             <h3>PICK YOUR NOMINEES <strong>→</strong></h3>
             <div className="buttons">
-                <Button type="primary" text="VOTE NOW" />
-                <Button type="secondary" text="ABOUT" />
+                <Link to="/">
+                    <Button type="primary" text="VOTE NOW" />
+                </Link>
+                <Link to="/about">
+                    <Button type="secondary" text="ABOUT" />
+                </Link>
             </div>
         </div>
     </CTAContainer>
@@ -40,8 +45,14 @@ const CTAContainer = styled.div`
     }
 
     h3 {
+        margin: 20px 0;
         font-style: italic;
         font-size: 2.5rem;
+
+        strong {
+            margin-left: 10px;
+            font-weight: bold;
+        }
     }
 
     strong {

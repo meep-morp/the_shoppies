@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
+import NominatedList from "./components/NominatedList";
 import "./global.css";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
 		<Router>
 			<Nav />
 			<Route exact path="/" component={Home} />
+			<NominatedList />
 		</Router>
 	);
 }
