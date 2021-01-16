@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import MovieCard from '../DesignSystem/MovieCard'
+import MovieCard from './MovieCard'
 
 const MovieList = props => {
     return (
