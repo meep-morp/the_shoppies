@@ -15,8 +15,10 @@ const Home = () => {
 		)
 			.then(res => {
 				setMovies(
-					res.data.Search.map(movie => {
+					res.data.Search.map((movie, i) => {
 						movie.voted = false;
+						// Can't find an id inside of the search query
+						movie.id = Math.random * i;
 						return movie;
 					})
 				);

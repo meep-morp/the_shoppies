@@ -19,7 +19,7 @@ export const AppProvider = props => {
 			setVoted([...voted, movie]);
 			setMovies(
 				movies.map(item => {
-					if (movie.Title === item.Title) return { ...item, voted: true };
+					if (movie.id === item.id) return { ...item, voted: true };
 					else return item;
 				})
 			);
@@ -32,11 +32,11 @@ export const AppProvider = props => {
 		console.log(movies);
 		setMovies(
 			movies.map(item => {
-				if (movie.Title === item.Title) return { ...item, voted: false };
+				if (movie.id === item.id) return { ...item, voted: false };
 				else return item;
 			})
 		);
-		setVoted(voted.filter(item => movie.Title !== item.Title));
+		setVoted(voted.filter(item => movie.id !== item.id));
 		setVotedFull(false);
 	};
 
