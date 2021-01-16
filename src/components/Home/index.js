@@ -11,21 +11,25 @@ const Home = () => {
 
 	const searchMovie = e =>
 		Axios.get(
-			`https://www.omdbapi.com/?s=${e.target.value}&page=1-10&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
+			`https://www.omdbapi.com/?s=${e.target.value}&page=1-8&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
 		)
 			.then(res => {
-				setMovies(res.data.Search.map(movie => (movie.voted = false)));
+				setMovies(
+					res.data.Search.map(movie => {
+						movie.voted = false;
+						return movie;
+					})
+				);
 				console.log(movies);
 			})
 			.catch(err => {
 				console.log(err);
-				setMovies("No Results Found.");
 			});
 
 	return (
 		<HomeContainer>
 			<CTA />
-			<SearchBar /*onChange={searchMovie}*/ placeholder="Search..." />
+			<SearchBar onChange={searchMovie} placeholder="Search..." />
 			{votedFull && (
 				<h3
 					style={{

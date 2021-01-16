@@ -8,48 +8,7 @@ export const AppProvider = props => {
 	const [voted, setVoted] = useState([]);
 	const [votedFull, setVotedFull] = useState(false);
 
-	const [movies, setMovies] = useState([
-		{
-			Poster:
-				"https://m.media-amazon.com/images/M/MV5BYmZjM2UyYWEtMGI3Yi00MGI4LTllNGEtZDAyYjdkYjYyODFiXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg",
-			Title: "Come te movi, te fulmino!",
-			Type: "movie",
-			Year: "1958",
-			voted: false,
-		},
-		{
-			Poster:
-				"https://m.media-amazon.com/images/M/MV5BYmZjM2UyYWEtMGI3Yi00MGI4LTllNGEtZDAyYjdkYjYyODFiXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg",
-			Title: "Come te movi, te fulmino!",
-			Type: "movie",
-			Year: "1958",
-			voted: false,
-		},
-		{
-			Poster:
-				"https://m.media-amazon.com/images/M/MV5BYmZjM2UyYWEtMGI3Yi00MGI4LTllNGEtZDAyYjdkYjYyODFiXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg",
-			Title: "Come te movi, te fulmino!",
-			Type: "movie",
-			Year: "1958",
-			voted: false,
-		},
-		{
-			Poster:
-				"https://m.media-amazon.com/images/M/MV5BYmZjM2UyYWEtMGI3Yi00MGI4LTllNGEtZDAyYjdkYjYyODFiXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg",
-			Title: "Come te movi, te fulmino!",
-			Type: "movie",
-			Year: "1958",
-			voted: false,
-		},
-		{
-			Poster:
-				"https://m.media-amazon.com/images/M/MV5BYmZjM2UyYWEtMGI3Yi00MGI4LTllNGEtZDAyYjdkYjYyODFiXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg",
-			Title: "Come te movi, te fulmino!",
-			Type: "movie",
-			Year: "1958",
-			voted: false,
-		},
-	]);
+	const [movies, setMovies] = useState([]);
 
 	const hasVoted = movieTitle => {
 		voted.some(movie => movie.Title === movieTitle);

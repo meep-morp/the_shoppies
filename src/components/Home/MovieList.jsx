@@ -5,7 +5,7 @@ import MovieCard from './MovieCard'
 const MovieList = props => {
     return (
         <MovieListContainer>
-            {!props.data && <h2 style={{ margin: "0 auto", fontSize: "2rem", fontWeight: "bold", opacity: 0.4 }}>Search for a Movie to see Results...</h2>}
+            {(!props.data || props.data.length === 0) && <h2 style={{ margin: "0 auto", fontSize: "2rem", fontWeight: "bold", opacity: 0.4 }}>Search for a Movie to see Results...</h2>}
             {
                 props.data && props.data.map(movie => (
                     <MovieCard data={movie} />
