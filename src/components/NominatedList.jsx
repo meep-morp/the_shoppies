@@ -30,7 +30,7 @@ const NominatedList = () => {
 export default NominatedList;
 
 const NominatedListContainer = styled.div`
-    position: absolute;
+    position: fixed;
     z-index: 1;
     bottom: 0;
     right: 0;
