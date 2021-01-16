@@ -6,6 +6,7 @@ export const AppContext = createContext();
 
 export const AppProvider = props => {
 	const [voted, setVoted] = useState([]);
+	const [votedFull, setVotedFull] = useState(false);
 
 	const [movies, setMovies] = useState([
 		{
@@ -14,6 +15,7 @@ export const AppProvider = props => {
 			Title: "Come te movi, te fulmino!",
 			Type: "movie",
 			Year: "1958",
+			voted: false,
 		},
 		{
 			Poster:
@@ -21,6 +23,7 @@ export const AppProvider = props => {
 			Title: "Come te movi, te fulmino!",
 			Type: "movie",
 			Year: "1958",
+			voted: false,
 		},
 		{
 			Poster:
@@ -28,6 +31,7 @@ export const AppProvider = props => {
 			Title: "Come te movi, te fulmino!",
 			Type: "movie",
 			Year: "1958",
+			voted: false,
 		},
 		{
 			Poster:
@@ -35,6 +39,7 @@ export const AppProvider = props => {
 			Title: "Come te movi, te fulmino!",
 			Type: "movie",
 			Year: "1958",
+			voted: false,
 		},
 		{
 			Poster:
@@ -42,11 +47,38 @@ export const AppProvider = props => {
 			Title: "Come te movi, te fulmino!",
 			Type: "movie",
 			Year: "1958",
+			voted: false,
 		},
 	]);
 
 	const hasVoted = movieTitle => {
-		movies.some(movie => movie.Title === movieTitle);
+		voted.some(movie => movie.Title === movieTitle);
+	};
+
+	const addMovie = movie => {
+		if (voted.length < 5) {
+			setVoted([...voted, movie]);
+			setMovies(
+				movies.map(item => {
+					if (movie.Title === item.Title) return { ...item, voted: true };
+					else return item;
+				})
+			);
+			console.log(movies);
+			console.log(voted);
+		} else setVotedFull(true);
+	};
+
+	const removeMovie = movie => {
+		console.log(movies);
+		setMovies(
+			movies.map(item => {
+				if (movie.Title === item.Title) return { ...item, voted: false };
+				else return item;
+			})
+		);
+		setVoted(voted.filter(item => movie.Title !== item.Title));
+		setVotedFull(false);
 	};
 
 	return (
@@ -57,6 +89,9 @@ export const AppProvider = props => {
 				movies,
 				setMovies,
 				hasVoted,
+				addMovie,
+				removeMovie,
+				votedFull,
 			}}>
 			{props.children}
 		</AppContext.Provider>

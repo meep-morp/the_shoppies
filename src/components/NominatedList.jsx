@@ -1,8 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TweenMax, Power3 } from "gsap";
+import { AppContext } from '../context/AppContext';
 
 const NominatedList = () => {
+    const { voted } = useContext(AppContext)
     const [open, setOpen] = useState(false);
     let menu = useRef(null);
 
@@ -20,6 +22,13 @@ const NominatedList = () => {
     return <NominatedListContainer>
         <div style={{ display: `${open ? "block" : "none"}` }} ref={el => { menu = el }} className="nom-list">
             <span onClick={closeMenu} role="button">↘</span>
+            <div className="movie-list">
+                {
+                    // voted.map(vote => (
+
+                    // ))
+                }
+            </div>
         </div>
         {!open && <div className="menu" onClick={openMenu}>📝</div>}
     </NominatedListContainer>
