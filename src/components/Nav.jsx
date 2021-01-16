@@ -10,10 +10,6 @@ const Nav = () => {
             <NavLink to="/">
                 <img src={logo} alt="logo" className="logo" />
             </NavLink>
-            <div className="links">
-                <NavLink to="/about">ABOUT</NavLink>
-                <NavLink to="/">SIGN IN</NavLink>
-            </div>
         </NavContainer>
     )
 }
