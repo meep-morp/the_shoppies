@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import MovieCardMenu from './MovieCardMenu'
 
 const MovieCard = props => {
+    const [menuHidden, setMenuHidden] = useState(true)
     return (
-        <MovieCardContainer>
+        <MovieCardContainer onMouseEnter={() => setMenuHidden(false)} onMouseLeave={() => setMenuHidden(true)}>
+            {
+                !menuHidden && <MovieCardMenu movie={props.data} />
+            }
             <img src={props.data.Poster} alt="" />
             <div className="info">
                 <h3>{props.data.Title}</h3>
@@ -43,11 +48,5 @@ const MovieCardContainer = styled.div`
 
     .info {
         margin: 10px;
-    }
-
-    &::before {
-        background-color: black;
-        opacity: 0.5;
-        z-index: 3;
     }
 `
