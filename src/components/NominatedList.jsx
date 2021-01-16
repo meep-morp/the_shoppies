@@ -2,8 +2,6 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { TweenMax, Power3 } from "gsap";
 
-import icon from "../assets/list-icon.svg";
-
 const NominatedList = () => {
     const [open, setOpen] = useState(false);
     let menu = useRef(null);
