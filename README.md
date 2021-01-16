@@ -1,5 +1,5 @@
 # The Shoppies!
-[Deployed Site ->](link)
+[Deployed Site ->](https://the-shoppiess.vercel.app/)
 
 
 | Installed Dependencies | Description |
