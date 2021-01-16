@@ -6,19 +6,11 @@ import CTA from "./CTA";
 import MovieList from "./MovieList";
 
 const Home = () => {
-	const [movies, setMovies] = useState([
-		{
-			Poster:
-				"https://m.media-amazon.com/images/M/MV5BYmZjM2UyYWEtMGI3Yi00MGI4LTllNGEtZDAyYjdkYjYyODFiXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg",
-			Title: "Come te movi, te fulmino!",
-			Type: "movie",
-			Year: "1958",
-		},
-	]);
+	const [movies, setMovies] = useState([]);
 
 	const searchMovie = e =>
 		Axios.get(
-			`https://www.omdbapi.com/?s=${e.target.value}&page=1-10&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
+			`https://www.omdbapi.com/?s=${e.target.value}&page=1-15&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
 		)
 			.then(res => {
 				setMovies(res.data.Search);
@@ -32,7 +24,7 @@ const Home = () => {
 	return (
 		<HomeContainer>
 			<CTA />
-			<SearchBar /*onChange={searchMovie}*/ placeholder="Search..." />
+			<SearchBar onChange={searchMovie} placeholder="Search..." />
 			<MovieList data={movies} />
 		</HomeContainer>
 	);

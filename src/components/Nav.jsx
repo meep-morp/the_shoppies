@@ -22,13 +22,13 @@ const Nav = () => {
 export default Nav;
 
 const NavContainer = styled.nav`
-    position: fixed;
+    position: absolute;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 110px;
-    width: 100%;
+    width: 97%;
     padding: 0 20px;
 
     .logo {
